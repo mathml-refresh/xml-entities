@@ -45,7 +45,14 @@
 	 <dd>
        <xsl:for-each select="current-group()">
 	<xsl:if test="position()!=1">, </xsl:if>
-	<span title="{../@id}{'&#10;accent'[current()/@accent='true']}{'&#10;stretchy'[current()/@stretchy='true']}{concat('&#10;priority:',current()/@priority)[current()/@priority]}{'&#10;'}{../lower-case(description)}">
+	<span title="{
+		     ../@id}{
+		     '&#10;accent'[current()/@accent='true']}{
+		     '&#10;stretchy'[current()/@stretchy='true']}{
+		     '&#10;largeop'[current()/@largeop='true']}{
+		     '&#10;symmetric'[current()/@symmetric='true']}{
+		     '&#10;movablelimits'[current()/@movablelimits='true']}{
+		     '&#10;'}{../lower-case(description)}">
 	 <xsl:choose>
 	  <xsl:when test="../@id=('U02061','U02062','U02063','U02064') or starts-with(../@id,'U1E')">
 	   <xsl:text>&#x27e8;</xsl:text>
