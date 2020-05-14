@@ -48,6 +48,7 @@
 	<span title="{
 		     ../@id}{
 		     '&#10;accent'[current()/@accent='true']}{
+		     '&#10;fence'[current()/@fence='true']}{
 		     '&#10;stretchy'[current()/@stretchy='true']}{
 		     '&#10;largeop'[current()/@largeop='true']}{
 		     '&#10;symmetric'[current()/@symmetric='true']}{
@@ -57,7 +58,7 @@
 	  <xsl:when test="../@id=('U02061','U02062','U02063','U02064') or starts-with(../@id,'U1E')">
 	   <xsl:text>&#x27e8;</xsl:text>
 	   <span style="font-size:80%;font-style:italic">
-	    <xsl:value-of select="lower-case(../description)"/>
+	    <xsl:value-of select="replace(lower-case(../description),' ','&#160;')"/>
 	   </span>
 	   <xsl:text>&#x27e9;</xsl:text>
 	  </xsl:when>
