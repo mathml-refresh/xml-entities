@@ -46,7 +46,7 @@
        <xsl:for-each select="current-group()">
 	<xsl:if test="position()!=1">, </xsl:if>
 	<span title="{
-		     ../@id}{
+		     replace(replace(../@id,'U0?','U+'),'-0','&#160;U+')}{
 		     '&#10;accent'[current()/@accent='true']}{
 		     '&#10;fence'[current()/@fence='true']}{
 		     '&#10;stretchy'[current()/@stretchy='true']}{
